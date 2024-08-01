@@ -1,0 +1,95 @@
+{
+  "position": "top",
+  "layer": "top",
+  "height": "32",
+  "mod": "dock",
+  "margin-top": 4,
+  "margin-bottom": 0,
+  "margin-left": 40,
+  "margin-right": 40,
+  // "modifier-reset":
+
+  // Modules
+  "include": [
+    "~/.config/waybar/workspaces.jsonc",
+    "~/.config/waybar/center.jsonc",
+    "~/.config/waybar/right.jsonc"
+  ],
+  "modules-left": ["custom/playerctl", "privacy"],
+  "modules-center": ["clock"],
+  "modules-right": [
+    "tray",
+    "pulseaudio#microphone",
+    "pulseaudio",
+    "custom/swaync",
+    "group/utils"
+  ],
+
+  // =================================================
+  "custom/playerctl": {
+    "format": "{icon} {}",
+    "return-type": "json",
+    "max-length": 64,
+    "exec": "playerctl -a metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+    "on-click-middle": "playerctl previous",
+    "on-click": "playerctl play-pause",
+    "on-click-right": "playerctl next",
+    "format-icons": {
+      "Playing": "<span foreground='#E5B9C6'>󰒮 󰐌 󰒭</span>",
+      "Paused": "<span foreground='#928374'>󰒮 󰏥 󰒭</span>"
+    }
+  },
+  "privacy": {
+    "icon-spacing": 5,
+    "icon-size": 18,
+    "transition-duration": 250,
+    "modules": [
+      {
+        "type": "screenshare",
+        "tooltip": true,
+        "tooltip-icon-size": 24
+      },
+      {
+        "type": "audio-out",
+        "tooltip": true,
+        "tooltip-icon-size": 24
+      },
+      {
+        "type": "audio-in",
+        "tooltip": true,
+        "tooltip-icon-size": 24
+      }
+    ]
+  }
+}
+
+// "hyprland/workspaces"
+
+// "custom/playerlabel": {
+//   "format": "<span>{}</span>",
+//   "return-type": "json",
+//   "max-length": 48,
+//   "exec": "playerctl -a metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+//   "on-click-middle": "playerctl play-pause",
+//   "on-click": "playerctl previous",
+//   "on-click-right": "playerctl next",
+//   "format-icons": {
+//     "Playing": "<span foreground='#E5B9C6'>󰒮 󰐌 󰒭</span>",
+//     "Paused": "<span foreground='#928374'>󰒮 󰏥 󰒭</span>"
+//   },
+// },
+
+// "battery": {
+//       "states": {
+//           "good": 95,
+//           "warning": 30,
+//           "critical": 15
+//       },
+//       "format":"{icon}  {capacity}%",
+//       "format-charging": "{capacity}% ",
+//       "format-plugged": "{capacity}% ",
+//       "format-alt": "{icon} {time}",
+//       // "format-good": "", // An empty format will hide the module
+//       // "format-full": "",
+//       "format-icons": ["", "", "", "", ""]
+// }

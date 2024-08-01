@@ -1,0 +1,3 @@
+hyprctl # hyprland controls
+gsettings # gtk settings
+pamixer # audio

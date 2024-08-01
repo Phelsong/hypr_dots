@@ -1,0 +1,51 @@
+# theme = "phel_nord"
+
+[editor]
+auto-save = true
+# shell = ["pwsh", "-C"]
+cursorline = true
+color-modes = true
+line-number = "relative"
+popup-border = "all"
+
+[editor.file-picker]
+git-ignore = false
+
+# =================================
+
+[keys.normal]
+C-o = ":open ~/.config/helix/config.toml" # Maps Ctrl-o to opening of the helix config file
+C-s = ":w"
+C-q = ":q"
+C-a = "extend_to_line_start"
+"A-f" = ":fmt"
+C-z = "earlier"
+C-p = "command_mode"
+C-y = "yank_to_clipboard"
+C-v = "paste_clipboard_before"
+#C-e = "extend_to_line_end"
+"C-/" = "toggle_comments"
+
+# =================================
+
+[keys.select]
+C-s = ":w"
+C-q = ":q"
+C-y = "yank_to_clipboard"
+C-v = "paste_clipboard_before"
+C-a = "extend_to_line_start"
+"C-/" = "toggle_comments"
+
+
+# =================================
+
+[keys.insert]
+C-s = ":w"
+C-v = "paste_clipboard_before"
+C-q = ":q!"
+#C-e = "extend_to_line_end"
+C-a = "extend_to_line_start"
+A-f = ":fmt"
+C-z = "earlier"
+C-p = "command_mode"
+"C-/" = "toggle_comments"

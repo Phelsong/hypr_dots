@@ -1,0 +1,156 @@
+#workspaces {
+  padding: 0rem 0.15rem 0.1rem 0.15rem;
+}
+#workspaces button {
+  padding: 0.1rem;
+  color: #4C566A;
+  padding: 0.1rem 0.1rem 0.1rem 0.3rem;
+  color: #928374;
+}
+#workspaces button.active {
+  color: #D8DEE9;
+  background-color: transparent;
+}
+#workspaces button.focused {
+  color: #D8DEE9;
+  background: #147a8c;
+}
+#workspaces button.urgent {
+  color: #11111b;
+  background: #7b2c39;
+}
+#workspaces button:hover {
+  background: #11111b;
+  color: #cdd6f4;
+  background-color: #e6b9c6;
+  color: black;
+  border-radius: 1rem;
+}
+
+#workspaces * {
+  padding: 0rem 0.2rem 0rem 0.2rem;
+}
+
+#tray {
+  padding: 0.1rem 0.2rem 0.1rem 0.2rem;
+}
+#tray button:hover {
+  background-color: rgba(40, 40, 40, 0.6);
+}
+
+#tray * {
+  padding: 0.05rem 0.1rem 0.05rem 0.1rem;
+}
+
+#custom-launcher {
+  color: #4C566A;
+  background-color: #282828;
+}
+#custom-launcher button:hover {
+  background-color: #D8DEE9;
+  color: transparent;
+}
+
+#custom-swaync {
+  padding: 0.1rem 0.2rem 0.1rem 0.2rem;
+}
+
+#utils {
+  padding: 0.1rem 0 0.1rem 0;
+}
+
+#utils * {
+  padding: 0rem 0.2rem 0rem 0.1rem;
+}
+
+#custom-playerctl {
+  color: #D8DEE9;
+  padding: 0.1rem 0.2rem 0.1rem 0.6rem;
+}
+
+#custom-playerctl * {
+  color: #D8DEE9;
+}
+
+#pulseaudio {
+  color: #D8DEE9;
+  font-size: 0.8rem;
+  padding: 0rem 0.1rem 0rem 0.1rem;
+}
+#pulseaudio.speaker {
+  color: #D8DEE9;
+  font-size: 2rem;
+}
+#pulseaudio.microphone {
+  color: #D8DEE9;
+  font-size: 1rem;
+  padding: 0rem 0.2rem 0rem 0.2rem;
+}
+#pulseaudio.muted {
+  color: #BF616A;
+}
+#pulseaudio.muted.microphone {
+  color: #D8DEE9;
+}
+#pulseaudio.source-muted.microphone {
+  color: #BF616A;
+}
+
+#bluetooth {
+  padding: 0.1rem 0.2rem 0.1rem 0.2rem;
+}
+
+#privacy {
+  padding: 0.1rem 0.5rem 0.1rem 0.4rem;
+}
+
+#privacy * {
+  color: #D08770;
+  padding: 0 0.05rem 0 0.05rem;
+}
+
+#window,
+#playerctl,
+#workspaces,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#tray,
+#bluetooth,
+#network,
+#pulseaudio#microphone,
+#pulseaudio,
+#clock {
+  font-size: 1rem;
+}
+
+#tooltip {
+  background-color: #4C566A;
+  opacity: 0.7;
+  font-size: 3rem;
+  border-radius: 1rem;
+  border-width: 2px;
+  border-style: solid;
+  border-color: rgba(28, 28, 30, 0.7215686275);
+}
+
+#clock {
+  color: #D8DEE9;
+  padding: 0.1rem 0.3rem 0.1rem 0.3rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+#waybar {
+  background-color: #2E3440;
+  border-radius: 0.6rem;
+}
+
+#waybar * {
+  font-size: 0.8rem;
+  font-family: "CaskaydiaCoveNerdFontMono";
+  border-radius: 0.3rem;
+}
+
+/*# sourceMappingURL=style.css.map */

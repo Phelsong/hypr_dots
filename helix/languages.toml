@@ -1,0 +1,205 @@
+[[language]]
+name = "python"
+language-servers = ["pyright"]
+#args = ["--stdio"]
+scope = "source.python"
+injection-regex = "python"
+file-types = [
+  "py",
+  "pyi",
+  "py3",
+  "pyw",
+  "ptl",
+  ".pythonstartup",
+  ".pythonrc",
+  "SConstruct",
+]
+shebangs = ["python"]
+roots = ["setup.py", "setup.cfg", "pyproject.toml"]
+comment-token = "#"
+indent = { tab-width = 4, unit = "    " }
+formatter = { command = "black", args = ["--quiet", "-"] }
+auto-format = true
+# will get "Async jobs timed out" errors if this empty config is not added
+#config = {}
+
+[language-server.pyright.config.python.analysis]
+typeCheckingMode = "basic"
+
+[language.debugger]
+command = "python"
+name = "debugpy"
+transport = "stdio"
+port = 16111
+args = ["-m", "debugpy", "--connect 127.0.0.1:16111", "-Xfrozen_modules=off"]
+
+[[language.debugger.templates]]
+name = "source"
+request = "launch"
+completion = [{ name = "entrypoint", completion = "filename", default = "." }]
+args = { mode = "debug", program = "{0}" }
+# -------------------------------
+
+[language-server]
+mojo = { command = "mojo-lsp-server" }
+
+[[language]]
+name = "mojo"
+scope = "source.mojo"
+roots = []
+injection-regex = "mojo"
+file-types = ["mojo", "🔥"]
+comment-token = "#"
+indent = { tab-width = 4, unit = "    " }
+language-servers = ["mojo"]
+formatter = { command = "mojo format", args = ["--quiet", "{0}"] }
+# auto-format = true
+
+[language.debugger]
+command = "mojo-lldb"
+name = "mojo-debug"
+port-arg = "--port {}"
+transport = "tcp"
+
+[[language.debugger.templates]]
+name = "binary"
+request = "launch"
+[[language.debugger.templates.completion]]
+completion = "filename"
+name = "binary"
+
+[language.debugger.templates.args]
+program = "{0}"
+runInTerminal = true
+
+[[grammar]]
+name = "mojo"
+source = { git = "https://github.com/garam-kim1/tree-sitter-mojo", rev = "2acba62c82e0123bd54b54a49a5d8d39acf9da8b" }
+
+
+# -------------------------------
+
+[[language]]
+name = "toml"
+file-types = ["toml"]
+language-servers = ["taplo"]
+formatter = { command = "taplo", args = ["format", "-"] }
+auto-format = true
+
+# ----------------------
+
+[[language]]
+name = "json"
+file-types = ["json", "jsonc"]
+language-servers = ["vscode-json-language-server"]
+formatter = { command = 'prettier', args = ["--parser", "json"] }
+
+# -------------------------------
+
+[[language]]
+name = "javascript"
+roots = ["package.json"]
+formatter = { command = 'prettier', args = ["--parser", "typescript"] }
+auto-format = true
+
+[[language]]
+name = "typescript"
+roots = ["package.json"]
+formatter = { command = 'prettier', args = ["--parser", "typescript"] }
+auto-format = true
+
+
+# -----------------------------
+
+[[language]]
+name = "html"
+file-types = ["html"]
+roots = ["index.html"]
+language-servers = ["vscode-html-language-server"]
+formatter = { command = 'prettier', args = ["--parser", "html"] }
+
+# -----------------------------
+
+[[language]]
+name = "sass"
+scope = ""
+roots = ["index.sass"]
+file-types = ["sass"]
+language-servers = ["vscode-css-language-server"]
+formatter = { command = 'prettier', args = ["--parser", "sass"] }
+
+
+[[grammar]]
+name = "sass"
+source = { git = "https://github.com/serenadeai/tree-sitter-scss", rev = "c478c6868648eff49eb04a4df90d703dc45b312a" }
+
+[[language]]
+name = "css"
+scope = ""
+file-types = ["css"]
+language-servers = ["vscode-css-language-server"]
+formatter = { command = 'prettier', args = ["--parser", "css"] }
+
+
+[[language]]
+name = "scss"
+scope = ""
+file-types = ["scss"]
+language-servers = ["vscode-css-language-server"]
+formatter = { command = 'prettier', args = ["--parser", "scss"] }
+# -----------------------------
+
+[[language]]
+name = "powershell"
+scope = "source.ps1"
+file-types = ["ps1", "psm1"]
+roots = [".git"]
+comment-token = "#"
+indent = { tab-width = 4, unit = "    " }
+language-servers = ["powershell-editor-services"]
+
+[language-server.powershell-editor-services]
+command = "pwsh"
+args = [
+  "-NoLogo",
+  "-NoProfile",
+  "-Command",
+  "/opt/powershell-editor-services/PowerShellEditorServices/Start-EditorServices.ps1 -BundledModulesPath /opt/powershell-editor-services/PowerShellEditorServices -SessionDetailsPath /opt/powershell-editor-services/PowerShellEditorServices/PowerShellEditorServices.sessions.json -LogPath /home/joshs/PowerShellEditorServices.log -HostName helix -HostProfileId 0 -HostVersion 1.0.0 -Stdio -LogLevel Normal",
+]
+# -FeatureFlags @() -AdditionalModules @()
+
+[[language]]
+name = "markdown"
+file-types = ["md"]
+language-servers = ["markdown"]
+
+
+[[language]]
+name = "dockerfile"
+file-types = ["Dockerfile", "dockerfile"]
+language-servers = ["dockerfile-langserver"]
+
+
+[[language]]
+name = "sql"
+file-types = ["sql"]
+roots = [".git"]
+language-servers = ["sql-language-server"]
+
+
+[[language]]
+name = "bash"
+file-types = ["sh"]
+language-servers = ["bash-language-server"]
+
+
+[[language]]
+name = "yaml"
+file-types = ["yaml", "yml"]
+language-servers = ["yaml-language-server"]
+formatter = { command = "ymlfmt", args = ["--stdin"] }
+
+# [[language]]
+# name = "PKGBUILD"
+# file-types = ["PKGBUILD", ".conf"]
+# language-servers = ["termux-language-server"]

@@ -1,0 +1,31 @@
+#window {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+box#main {
+  border-radius: 12px;
+  background-color: @theme_bg_color;
+}
+
+#entry { 
+	font-size: 36px;
+}
+
+list#main {
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 22px;
+  font-size: 24px;
+}
+
+list#plugin {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+label#match-desc {
+  font-size: 14px;
+}
+
+label#plugin {
+  font-size: 18px;
+  /* text-shadow: 1px 5px 1px; */
+}

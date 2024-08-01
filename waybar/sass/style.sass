@@ -1,0 +1,45 @@
+@use './workspaces'
+@use './tray'
+@use './audio'
+
+#window,
+#playerctl,
+#workspaces,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#tray,
+#bluetooth,
+#network,
+#pulseaudio#microphone,
+#pulseaudio,
+#clock
+	font-size: 1rem
+
+#tooltip
+	background-color: #4C566A
+	opacity: 0.7
+	font-size: 3rem
+	border-radius: 1rem
+	border-width: 2px
+	border-style: solid
+	border-color: #1c1c1eb8
+
+	// & label
+
+#clock
+	color: #D8DEE9
+	padding: .1rem .3rem .1rem .3rem
+	font-size: 1.2rem
+	font-weight: bold
+
+#waybar
+	background-color: #2E3440
+	border-radius: .6rem
+
+#waybar *
+	font-size: .8rem
+	font-family: "CaskaydiaCoveNerdFontMono"
+	// color: #cdd6f4
+	border-radius: .3rem

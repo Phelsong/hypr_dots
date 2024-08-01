@@ -1,0 +1,25 @@
+# Rofi is toggled on/off if you repeat the key presses
+bind = SUPER, SPACE, exec, pkill -x rofi || pwsh -noni -nop -f $hypr_scripts/rofilaunch.ps1 d # launch desktop applications
+bind = SUPER, T, exec, pkill -x rofi || pwsh -noni -nop -f $hypr_scripts/rofilaunch.ps1 w     # switch between desktop applications
+bind = SUPER, A, exec, pkill -x rofi || pwsh -noni -nop -f $hypr_scripts/rofilaunch.ps1 f     # browse system files
+bind = SUPER, K, exec, pkill -x rofi || pwsh -noni -nop -f $hypr_scripts/rofilaunch.ps1 s
+#
+bind = SUPER SHIFT, T, exec, pkill -x rofi || pwsh -noni -nop -f $hypr_scripts/themeselect.ps1   # theme select menu
+bind = SUPER SHIFT, J, exec, pkill -x rofi || pwsh -noni -nop -f $hypr_scripts/rofiselect.ps1    # rofi style select menu
+bind = SUPER SHIFT, A, exec, pkill -x rofi || pwsh -noni -nop -f $hypr_scripts/swwwallselect.ps1 # rofi wall select menu
+#
+bind = SUPER, Space, exec, pkill tofi-drun || tofi-drun --drun-launch=true -c ~/.config/tofi/tofi.conf
+bind = SUPERALT, Space, exec, pkill tofi-run || tofi-run -c ~/.config/tofi/tofi-run.conf
+#
+bind = SUPERSHIFT, S, exec, wayshot -s "$(slurp)" --stdout | wl-copy
+bind = $meh, U, exec, wayshot --stdout | wl-copy
+#
+bind = SUPER, V, exec, cliphist list | tofi -c ~/.config/tofi/tofi-run.conf | cliphist decode | wl-copy
+bind = SUPER, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy
+#
+bind = $hyprMod, U, exec, wlogout --protocol layer-shell # show the logout window
+#
+bind = SUPERSHIFT, S, exec, flameshot-gui
+#
+bind = SUPER, R, exec, wf-recorder -f $(xdg-user-dir VIDEOS)/$(date +'%H:%M:%S_%d-%m-%Y.mp4')
+bind = SUPER SHIFT, R, exec, killall -s SIGINT wf-recorder

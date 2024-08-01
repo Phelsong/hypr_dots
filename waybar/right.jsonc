@@ -1,0 +1,87 @@
+{
+  // ============================================================
+  // Right
+  // ============================================================
+  "tray": {
+    "icon-size": 22,
+    "spacing": 16
+  },
+  "pulseaudio": {
+    "format": "{icon} {volume}% |",
+    "tooltip": true,
+    "format-muted": " 🔇 |",
+    "format-bluetooth": "  ",
+    "on-click": "pamixer -t",
+    "on-click-middle": "com.mastermindzh.tidal-hifi",
+    "on-click-right": "pavucontrol-qt",
+    "on-scroll-up": "pamixer -i 5",
+    "on-scroll-down": "pamixer -d 5",
+    "scroll-step": 5,
+    "format-icons": {
+      "headphone": "  ",
+      "hands-free": "  ",
+      "headset": "  ",
+      "phone": "  ",
+      "portable": "  ",
+      "car": "  ",
+      "default": ["  ", "  ", "  "],
+      "hifi": " 𝄢 "
+    }
+  },
+  "pulseaudio#microphone": {
+    "format": "|{format_source}",
+    "format-source": "  ",
+    "format-source-muted": "  ",
+    "scroll-step": 5,
+    "on-click": "pamixer --default-source -t",
+    "on-click-right": "pavucontrol-qt"
+  },
+  "custom/swaync": {
+    "format": "  ",
+    "exec": "swaync -swb",
+    "on-click": "swaync-client -t"
+    // "restart-interval": 1,
+  },
+  "group/utils": {
+    "orientation": "horizontal",
+    "modules": ["custom/lock", "custom/power", "custom/reboot"],
+    "drawer": {
+      "transition-duration": 500,
+      "children-class": "not-power",
+      "transition-left-to-right": false
+    }
+  },
+  "custom/lock": {
+    "format": "󰍁",
+    "tooltip": false,
+    "on-click": "hyprlock"
+  },
+  "custom/reboot": {
+    "format": "󰜉",
+    "tooltip": false,
+    "on-click": "reboot"
+  },
+  "custom/power": {
+    "format": "",
+    "tooltip": false,
+    "on-click": "shutdown now"
+  }
+}
+
+// "bluetooth": {
+//   "format": "",
+//   "format-disabled": "none", // an empty format will hide the module
+//   "format-connected": " {num_connections}",
+//   "tooltip-format": "{device_alias}",
+//   "tooltip-format-connected": " {device_enumerate}",
+//   "tooltip-format-enumerate-connected": "{device_alias}"
+// },
+
+// "network": {
+//   // "interface": "wlp2*", // (Optional) To force the use of this interface
+//   "format-wifi": " {signalStrength}%",
+//   "format-ethernet": "🖧",
+//   "tooltip-format": "{ifname}:{essid} {ipaddr}/{cidr}",
+//   "format-linked": "{ifname} (No IP)",
+//   "format-disconnected": "Disconnected ⚠"
+// },

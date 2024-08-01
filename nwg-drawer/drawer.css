@@ -1,0 +1,44 @@
+window {
+  background-color: rgba(59, 66, 82, 0.9607843137);
+  color: #9f9c9c;
+  padding: 8rem 0 0 0;
+  margin: 0;
+}
+
+/* search entry */
+entry {
+  background-color: #2e3440;
+  padding: 0.6rem 2rem 0.6rem 2rem;
+}
+
+button,
+image {
+  padding: 0.4rem 0.6rem 0.4rem 0.6rem;
+  margin: 0;
+  background: none;
+  border: none;
+}
+
+button:hover {
+  background-color: #5e81ac;
+}
+
+/* in case you wanted to give category buttons a different look */
+#category-button {
+  padding: 0.1rem 1rem 0.1rem 1rem;
+  background-color: #3b4252;
+  margin: 0;
+  border: none;
+}
+
+#pinned-box {
+  padding: 0.4rem 1rem 0.4rem 1rem;
+  margin: 0;
+}
+
+#files-box {
+  padding: 0.4rem 1rem 0.4rem 1rem;
+  margin: 0;
+}
+
+/*# sourceMappingURL=drawer.css.map */

@@ -1,0 +1,38 @@
+// ===========================================================
+// middle
+// ============================================================
+{
+  "clock": {
+    "format": "{:%H:%M}",
+    "tooltip": "true",
+    "tooltip-format": "<big>{:%Y %B %d}</big>\n<tt><small>{calendar}</small></tt>",
+    "format-alt": " {:%m/%d} | {:%H:%M}",
+    "on-click": "mode"
+  }
+}
+
+// "memory": {
+//     "format": "🕶 {}%",
+//     "format-alt": "🕶 {used}/{total}",
+//     "interval": 5
+//   },
+
+//   "cpu": {
+//     "format": "󰻠 {usage}%",
+//     "format-alt": "󰻠 {avg_frequency}GHz",
+//     "interval": 5
+//   }
+
+//   "disk": {
+//     "format": "󰋊 {}%",
+//     "format-alt": "󰋊 {used}/{total} GiB",
+//     "interval": 1800,
+//     "path": "/home"
+//   },
+
+//   "temperature": {
+//     "thermal-zone": 1,
+//     "format": "{temperatureF}°C ",
+//     "critical-threshold": 80,
+//     "format-critical": "{temperatureC}°C "
+//   }

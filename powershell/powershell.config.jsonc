@@ -1,0 +1,11 @@
+{
+  "PowerShellPolicies": {
+    "ScriptExecution": {
+      "ExecutionPolicy": "RemoteSigned"
+    }
+  },
+  "ModuleLogging": {
+    "EnableModuleLogging": true,
+    "ModuleNames": ["PSReadLine", "PowerShellGet"]
+  }
+}

@@ -1,0 +1,43 @@
+/* 
+#battery {
+  color: #a6e3a1;
+  border-radius: 0 10px 10px 0;
+  margin-right: 10px;
+  border-left: 0px;
+}
+
+
+#backlight {
+    border-radius: 10px 0px 0px 10px;
+  }
+
+  #battery {
+    color: #9ece6a;
+  }
+  
+  #battery.charging {
+    color: #9ece6a;
+  }
+  
+  #battery.warning:not(.charging) {
+    background-color: #f7768e;
+    color: #24283b;
+    border-radius: 5px 5px 5px 5px;
+  }
+  
+  #backlight {
+    background-color: #24283b;
+    color: #db4b4b;
+    border-radius: 0px 0px 0px 0px;
+    margin: 5px;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding: 0px 0px;
+  }
+   */
+   #custom-power_profile {
+    color: #a6e3a1;
+    border-left: 0px;
+    border-right: 0px;
+  }
+  
